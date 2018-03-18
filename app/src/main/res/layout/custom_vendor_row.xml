@@ -1,35 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardElevation="1dp"
-    app:cardUseCompatPadding="true">
+    android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvVendorNameCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="6dp"
+                android:text="Vendor Name"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvVendorPriceCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@color/colorPrimary"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:text="Rs. 20,000"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
 
         <View style="@style/HorizontalLine" />
 
-        <TextView
-            android:id="@+id/tvVendorNameCustom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vendor Name"
-            android:textSize="20dp" />
+    </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvVendorPriceCustom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:paddingBottom="10dp"
-            android:text="Rs. 20,000"
-            android:textColor="#0000FF"
-            android:textSize="20dp" />
 
-    </RelativeLayout>
 </android.support.v7.widget.CardView>
 
     <!--<?xml version="1.0" encoding="utf-8"?>-->
