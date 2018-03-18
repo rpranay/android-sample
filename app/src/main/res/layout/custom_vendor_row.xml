@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="1dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View style="@style/HorizontalLine" />
+
+        <TextView
+            android:id="@+id/tvVendorNameCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vendor Name"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tvVendorPriceCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="10dp"
+            android:text="Rs. 20,000"
+            android:textColor="#0000FF"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:layout_marginBottom="8dp"--><!--android:padding="8dp">-->
+
+    <!--&lt;!&ndash;<android.support.v7.widget.CardView&ndash;&gt;--><!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;--><!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;--><!--&lt;!&ndash;app:cardElevation="2dp"&ndash;&gt;--><!--&lt;!&ndash;app:cardUseCompatPadding="true">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<RelativeLayout&ndash;&gt;--><!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;--><!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;--><!--&lt;!&ndash;android:padding="8dp">&ndash;&gt;-->
+
+    <!--<TextView--><!--android:id="@+id/tvVendorNameCustom"--><!--android:layout_width="wrap_content"--><!--android:layout_height="match_parent"--><!--android:text="Vendor Name"--><!--android:textSize="20dp" />-->
+
+    <!--<TextView--><!--android:id="@+id/tvVendorPriceCustom"--><!--android:layout_width="wrap_content"--><!--android:layout_height="match_parent"--><!--android:layout_alignParentRight="true"--><!--android:paddingBottom="10dp"--><!--android:text="Rs. 20,000"--><!--android:textColor="#0000FF"--><!--android:textSize="20dp" />-->
+
+    <!--&lt;!&ndash;</RelativeLayout>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;</android.support.v7.widget.CardView>&ndash;&gt;-->
+
+    <!--</RelativeLayout>-->
+
+    <!--&lt;!&ndash;<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;&lt;!&ndash;xmlns:card_view="http://schemas.android.com/apk/res-auto"&ndash;&gt;&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;&lt;!&ndash;android:elevation="100dp"&ndash;&gt;&lt;!&ndash;card_view:cardElevation="5dp"&ndash;&gt;&lt;!&ndash;card_view:cardBackgroundColor="@android:color/white"&ndash;&gt;&lt;!&ndash;&gt;&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<RelativeLayout&ndash;&gt;&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;&lt;!&ndash;android:layout_height="match_parent">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;&lt;!&ndash;android:id="@+id/tvVendorNameCustom"&ndash;&gt;&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;&lt;!&ndash;android:text="Vendor Name"&ndash;&gt;&lt;!&ndash;android:textSize="20dp" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;&lt;!&ndash;android:id="@+id/tvVendorPriceCustom"&ndash;&gt;&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;&lt;!&ndash;android:paddingBottom="10dp"&ndash;&gt;&lt;!&ndash;android:text="Rs. 20,000"&ndash;&gt;&lt;!&ndash;android:textColor="#0000FF"&ndash;&gt;&lt;!&ndash;android:textSize="20dp" />&ndash;&gt;&lt;!&ndash;</RelativeLayout>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;</android.support.v7.widget.CardView>&ndash;&gt;-->

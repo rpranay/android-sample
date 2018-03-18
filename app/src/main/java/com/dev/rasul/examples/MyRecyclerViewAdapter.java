@@ -43,7 +43,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tv = itemView.findViewById(R.id.tvGridName);
+            tv = itemView.findViewById(R.id.item_title);
             itemView.setOnClickListener(this);
         }
 

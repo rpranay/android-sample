@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvGrid"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card_view:cardElevation="7dp"
-    card_view:contentPadding="7dp"
-    card_view:cardCornerRadius="7dp"
-    card_view:cardMaxElevation="7dp"
     android:layout_margin="5dp"
-    >
+    card_view:cardCornerRadius="7dp"
+    card_view:cardElevation="7dp"
+    card_view:cardMaxElevation="7dp"
+    card_view:contentPadding="7dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -21,14 +20,72 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:src="@drawable/cart" />
-        <TextView
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvGridName"
-            android:text="Item"
-            android:gravity="center"
-            android:textSize="25sp"
             android:layout_below="@id/ivGridImage"
-            />
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical"
+            android:paddingStart="8dp">
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivGridImage"
+                android:gravity="left"
+                android:paddingTop="4dp"
+                android:text="Annapurna Salt"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingTop="2dp"
+                    android:text="Rs. 1,357"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@mipmap/ic_star_rating" />
+
+                    <TextView
+                        android:id="@+id/item_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="2dp"
+                        android:text="3.5"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </RelativeLayout>
 </android.support.v7.widget.CardView>
