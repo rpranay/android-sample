@@ -13,19 +13,27 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Switch;
 import android.widget.Toast;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MyHorizontalRecyclerAdapter.HorizontalItemClickListener, MyRecyclerViewAdapter.ItemClickListener, NavigationView.OnNavigationItemSelectedListener {
 
-    private RecyclerView recyclerView, horizontalRecycler;
+    private RecyclerView categoryHorizontalRecycler, vendorHorizontalRecycler;
     private MyRecyclerViewAdapter adapter;
-    private MyHorizontalRecyclerAdapter horizontalAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    DrawerLayout mDrawerLayout;
-    NavigationView mNavigationView;
-    Toolbar toolbar;
-    Context context = this;
+    private MyHorizontalRecyclerAdapter categoryHorizontalAdapter, vendorHorizontalAdapter;
+    private RecyclerView.LayoutManager mLayoutManager1, mLayoutManager2;
+    private DrawerLayout mDrawerLayout;
+    private NavigationView mNavigationView;
+    private Toolbar toolbar;
+    private Context context = this;
     private TabLayout tabLayout;
+    private List<String> vendor_list, category_list;
+    static final int TYPE_CATEGORY = 1, TYPE_VENDOR = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements MyHorizontalRecyc
 
         toolbar = findViewById(R.id.my_custom_toolbar);
         setSupportActionBar(toolbar);
+        vendor_list = Arrays.asList("D-Mart","More Supermarket", "Reliance Fresh");
+        category_list = Arrays.asList("Groceries", "Cosmetics", "Dairy Products", "Bed & Bath", "Fruits & Vegetables", "Apparel");
 
 //        tabLayout = findViewById(R.id.tabs);
 //
@@ -47,16 +57,21 @@ public class MainActivity extends AppCompatActivity implements MyHorizontalRecyc
 //        collapsingToolbarLayout.setTitle("FrugalIndian");
 //        recyclerView = findViewById(R.id.rvItemGrids);
 
-        horizontalRecycler = findViewById(R.id.rvHorizontal);
+        categoryHorizontalRecycler = findViewById(R.id.rvHorizontal);
+        vendorHorizontalRecycler = findViewById(R.id.rvHorizontal2);
         mDrawerLayout = findViewById(R.id.dlDrawer);
         mNavigationView = findViewById(R.id.nvDrawer);
-        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        horizontalRecycler.setLayoutManager(mLayoutManager);
-        horizontalAdapter = new MyHorizontalRecyclerAdapter(this);
-        horizontalRecycler.setAdapter(horizontalAdapter);
-        horizontalAdapter.setHorizontalClickListener(this);
+        mLayoutManager1 = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+        mLayoutManager2 = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+        categoryHorizontalRecycler.setLayoutManager(mLayoutManager1);
+        vendorHorizontalRecycler.setLayoutManager(mLayoutManager2);
+        categoryHorizontalAdapter = new MyHorizontalRecyclerAdapter(context, vendor_list, TYPE_CATEGORY);
+        vendorHorizontalAdapter = new MyHorizontalRecyclerAdapter(context, category_list, TYPE_VENDOR);
+        categoryHorizontalRecycler.setAdapter(categoryHorizontalAdapter);
+        vendorHorizontalRecycler.setAdapter(vendorHorizontalAdapter);
+        categoryHorizontalAdapter.setHorizontalClickListener(this);
+        vendorHorizontalAdapter.setHorizontalClickListener(this);
         mNavigationView.setNavigationItemSelectedListener(this);
-
     }
 
 
@@ -92,9 +107,13 @@ public class MainActivity extends AppCompatActivity implements MyHorizontalRecyc
     }
 
     @Override
-    public void onHorizontalItemClick(View v, int pos) {
+    public void onHorizontalItemClick(View v, int pos, int type) {
         Toast.makeText(context, "Item clicked #" + pos, Toast.LENGTH_LONG).show();
-
+        switch (type){
+            case TYPE_CATEGORY: break;
+            case TYPE_VENDOR: break;
+            default:break;
+        }
         startActivity(new Intent(MainActivity.this, ProductListActivity.class));
     }
 

@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by rasul on 3/24/2018.
  */
@@ -15,9 +18,13 @@ import android.widget.TextView;
 class MyHorizontalRecyclerAdapter extends RecyclerView.Adapter<MyHorizontalRecyclerAdapter.ViewHolder> {
     private LayoutInflater mInflater;
     private MyHorizontalRecyclerAdapter.HorizontalItemClickListener mClickListener;
+    private int mType = 0;
+    private List<String> mList;
 
-    public MyHorizontalRecyclerAdapter(Context c) {
+    public MyHorizontalRecyclerAdapter(Context c, List<String> list, int type) {
         this.mInflater = LayoutInflater.from(c);
+        mType = type;
+        mList = list;
     }
 
     @Override
@@ -28,13 +35,12 @@ class MyHorizontalRecyclerAdapter extends RecyclerView.Adapter<MyHorizontalRecyc
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String txt = "Item #" + position;
-        holder.tv.setText(txt);
+        holder.tv.setText(mList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return mList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -49,13 +55,13 @@ class MyHorizontalRecyclerAdapter extends RecyclerView.Adapter<MyHorizontalRecyc
         @Override
         public void onClick(View view) {
             if (mClickListener != null){
-                mClickListener.onHorizontalItemClick(view, getAdapterPosition());
+                mClickListener.onHorizontalItemClick(view, getAdapterPosition(), mType);
             }
         }
     }
 
     public interface HorizontalItemClickListener{
-        void onHorizontalItemClick(View v, int pos);
+        void onHorizontalItemClick(View v, int pos, int type);
     }
 
     void setHorizontalClickListener(MyHorizontalRecyclerAdapter.HorizontalItemClickListener listener){
