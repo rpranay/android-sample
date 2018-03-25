@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by rasul on 3/14/2018.
@@ -16,10 +17,12 @@ import java.util.ArrayList;
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
     private LayoutInflater mInflater;
+    private ArrayList<ProductItem> mItem;
     private ItemClickListener mClickListener;
 
-    public MyRecyclerViewAdapter(Context c) {
+    public MyRecyclerViewAdapter(Context c, ArrayList<ProductItem> pItem) {
         this.mInflater = LayoutInflater.from(c);
+        mItem = pItem;
     }
 
     @Override
@@ -30,14 +33,14 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     @Override
     public void onBindViewHolder(MyRecyclerViewAdapter.ViewHolder holder, int position) {
-        holder.tvName.setText(ProductListActivity.item_name.get(position));
-        holder.tvPrice.setText(ProductListActivity.item_price.get(position));
-        holder.tvRating.setText(ProductListActivity.item_rating.get(position));
+        holder.tvName.setText(mItem.get(position).item_name);
+        holder.tvPrice.setText("Rs. "+mItem.get(position).item_price+"");
+        holder.tvRating.setText(mItem.get(position).item_rating);
     }
 
     @Override
     public int getItemCount() {
-        return ProductListActivity.item_name.size();
+        return mItem.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

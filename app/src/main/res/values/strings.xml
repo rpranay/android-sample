@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">FrugalIndian</string>
+    <string-array name="category_titles">
+        <item>Bath and Spa</item>
+        <item>Crockery</item>
+        <item>Daily Essentials</item>
+        <item>Electronics</item>
+        <item>Footwear</item>
+        <item>Grocery</item>
+        <item>Home and Personal</item>
+        <item>Luggage</item>
+    </string-array>
+    <string-array name="category_titles_unique">
+        <item>bedbath</item>
+        <item>crockery</item>
+        <item>dailyessentials</item>
+        <item>electronics</item>
+        <item>footwear</item>
+        <item>grocery</item>
+        <item>homepersonal</item>
+        <item>luggage</item>
+    </string-array>
+    <string-array name="vendor_titles">
+        <item>D-Mart</item>
+        <item>More Supermarket</item>
+        <item>Reliance Fresh</item>
+    </string-array>
+    <string-array name="vendor_titles_unique">
+        <item>dmart</item>
+        <item>moresupermarket</item>
+        <item>reliancefresh</item>
+    </string-array>
 </resources>

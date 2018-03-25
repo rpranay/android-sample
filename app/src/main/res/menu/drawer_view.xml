@@ -2,43 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:checked="true"
-            android:title="One" />
+            android:id="@+id/nav_bedbath"
+            android:title="Bath and Spa" />
         <item
-            android:id="@+id/nav_gallery"
-            android:title="Two" />
+            android:id="@+id/nav_crockery"
+            android:title="Crockery" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:title="Three" />
+            android:id="@+id/nav_dailyessentials"
+            android:title="Daily Essentials" />
         <item
-            android:id="@+id/nav_manage"
-            android:title="Four" />
+            android:id="@+id/nav_electronics"
+            android:title="Electronics" />
         <item
-            android:id="@+id/nav_camera_1"
-            android:checked="true"
-            android:title="One" />
+            android:id="@+id/nav_footwear"
+            android:title="Footwear" />
         <item
-            android:id="@+id/nav_gallery_1"
-            android:title="Two" />
+            android:id="@+id/nav_grocery"
+            android:title="Grocery" />
         <item
-            android:id="@+id/nav_slideshow_1"
-            android:title="Three" />
+            android:id="@+id/nav_homepersonal"
+            android:title="Home and Personal" />
         <item
-            android:id="@+id/nav_manage_1"
-            android:title="Four" />
-        <item
-            android:id="@+id/nav_camera2"
-            android:checked="true"
-            android:title="One" />
-        <item
-            android:id="@+id/nav_gallery2"
-            android:title="Two" />
-        <item
-            android:id="@+id/nav_slideshow2"
-            android:title="Three" />
-        <item
-            android:id="@+id/nav_manage2"
-            android:title="Four" />
+            android:id="@+id/nav_luggage"
+            android:title="Luggage" />
+
     </group>
 </menu>
