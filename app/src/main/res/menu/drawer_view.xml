@@ -3,8 +3,8 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:title="One"
-            android:checked="true"/>
+            android:checked="true"
+            android:title="One" />
         <item
             android:id="@+id/nav_gallery"
             android:title="Two" />
@@ -13,6 +13,32 @@
             android:title="Three" />
         <item
             android:id="@+id/nav_manage"
+            android:title="Four" />
+        <item
+            android:id="@+id/nav_camera_1"
+            android:checked="true"
+            android:title="One" />
+        <item
+            android:id="@+id/nav_gallery_1"
+            android:title="Two" />
+        <item
+            android:id="@+id/nav_slideshow_1"
+            android:title="Three" />
+        <item
+            android:id="@+id/nav_manage_1"
+            android:title="Four" />
+        <item
+            android:id="@+id/nav_camera2"
+            android:checked="true"
+            android:title="One" />
+        <item
+            android:id="@+id/nav_gallery2"
+            android:title="Two" />
+        <item
+            android:id="@+id/nav_slideshow2"
+            android:title="Three" />
+        <item
+            android:id="@+id/nav_manage2"
             android:title="Four" />
     </group>
 </menu>

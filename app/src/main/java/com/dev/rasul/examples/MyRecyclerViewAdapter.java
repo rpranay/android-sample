@@ -11,12 +11,12 @@ import android.widget.TextView;
  * Created by rasul on 3/14/2018.
  */
 
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>{
+public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
-    public MyRecyclerViewAdapter(Context c){
+    public MyRecyclerViewAdapter(Context c) {
         this.mInflater = LayoutInflater.from(c);
     }
 
@@ -28,8 +28,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     @Override
     public void onBindViewHolder(MyRecyclerViewAdapter.ViewHolder holder, int position) {
-        String txt = "Item #" + position;
-        holder.tv.setText(txt);
+        holder.tvName.setText(ProductListActivity.item_name.get(position));
+        holder.tvPrice.setText(ProductListActivity.item_price.get(position));
+        holder.tvRating.setText(ProductListActivity.item_rating.get(position));
     }
 
     @Override
@@ -37,29 +38,31 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         return 10;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView tv;
+        TextView tvName, tvPrice, tvRating;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tv = itemView.findViewById(R.id.item_title);
+            tvName = itemView.findViewById(R.id.item_title);
+            tvPrice = itemView.findViewById(R.id.item_price);
+            tvRating = itemView.findViewById(R.id.item_rating);
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            if(mClickListener != null){
+            if (mClickListener != null) {
                 mClickListener.onItemClick(view, getAdapterPosition());
             }
         }
     }
 
-    public interface ItemClickListener{
+    public interface ItemClickListener {
         void onItemClick(View v, int position);
     }
 
-    void setClickListener(ItemClickListener listener){
+    void setClickListener(ItemClickListener listener) {
         this.mClickListener = listener;
     }
 }
